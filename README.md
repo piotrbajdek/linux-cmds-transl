@@ -1,8 +1,8 @@
-#SILVERPIN
+# SILVERPIN
 
 [silverpin](https://github.com/piotrbajdek/silverpin) is a set of simple aliases to pin and unpin deployments on Fedora Silverblue. Please, note that silverpin only works on the x86-64 architecture.
 
-#EXECUTABLES
+# EXECUTABLES
 
 All must be used with 'sudo':
 
@@ -18,13 +18,13 @@ All must be used with 'sudo':
 
 'silverunpin3' -- alias for 'ostree admin pin \--unpin 3'
 
-#INSTALLATION
+# INSTALLATION
 
 First, install nasm in Toolbox: _sudo dnf install nasm_
 
-silverpin can installed either (a) by the use of the two scripts, first running [install-1.sh](https://github.com/piotrbajdek/silverpin/blob/main/install-1.sh) in Toolbox and then [install-2.sh](https://github.com/piotrbajdek/silverpin/blob/main/install-2.sh) on Silverblue or (b) manually in 3 steps:
+[silverpin](https://github.com/piotrbajdek/silverpin) can installed either **(a)** by the use of the two scripts, first running [install-1.sh](https://github.com/piotrbajdek/silverpin/blob/main/install-1.sh) in Toolbox and then running [install-2.sh](https://github.com/piotrbajdek/silverpin/blob/main/install-2.sh) on Silverblue or **(b)** manually in 3 steps:
 
-(1) [in Toolbox]
+**(1)** [in Toolbox]
 
 _nasm -f elf64 silverpin0.asm_
 
@@ -38,7 +38,7 @@ _nasm -f elf64 silverunpin2.asm_
 
 _nasm -f elf64 silverunpin3.asm_
 
-(2) [in Toolbox]
+**(2)** [in Toolbox]
 
 _ld -o silverpin0 silverpin0.o_
 
@@ -52,7 +52,7 @@ _ld -o silverunpin2 silverunpin2.o_
 
 _ld -o silverunpin3 silverunpin3.o_
 
-(3) [on Silverblue]
+**(3)** [on Silverblue]
 
 _sudo cp silverpin0 /var/usrlocal/bin/_
 

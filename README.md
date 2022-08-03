@@ -2,7 +2,7 @@
 
 [silverpin](https://github.com/piotrbajdek/silverpin) is a set of simple aliases to pin and unpin deployments on Fedora Silverblue. Please, note that silverpin only works on the x86-64 architecture.
 
-# EXECUTABLES
+# BINARY FILES
 
 All must be used with 'sudo':
 
@@ -66,4 +66,4 @@ _sudo cp silverunpin2 /var/usrlocal/bin/_
 
 _sudo cp silverunpin3 /var/usrlocal/bin/_
 
-Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.0-alpha.1).
+Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.0-alpha.1). silverpin can be uninstalled by [uninstall.sh](https://github.com/piotrbajdek/silverpin/blob/main/uninstall.sh).

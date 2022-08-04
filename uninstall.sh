@@ -3,6 +3,7 @@
 
 #!/usr/bin/env bash
 
+sudo rm /var/usrlocal/bin/silverpin
 sudo rm /var/usrlocal/bin/silverpin0
 sudo rm /var/usrlocal/bin/silverpin1
 sudo rm /var/usrlocal/bin/silverunpin0

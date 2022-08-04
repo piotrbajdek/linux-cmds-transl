@@ -1,10 +1,12 @@
 # SILVERPIN
 
-[silverpin](https://github.com/piotrbajdek/silverpin) is a set of simple aliases to pin and unpin deployments on Fedora Silverblue. Please, note that silverpin only works on the x86-64 architecture.
+[silverpin](https://github.com/piotrbajdek/silverpin) is a set of simple aliases to pin and unpin deployments on [Fedora Silverblue](https://silverblue.fedoraproject.org/). Please, note that silverpin only works on the x86-64 architecture.
 
 # BINARY FILES
 
-All must be used with 'sudo':
+'silverpin' -- display help
+
+**All must be used with 'sudo':**
 
 'silverpin0' -- alias for 'ostree admin pin 0'
 
@@ -26,6 +28,8 @@ First, install nasm in Toolbox: _sudo dnf install nasm_
 
 **(1)** [in Toolbox]
 
+_nasm -f elf64 silverpin.asm_
+
 _nasm -f elf64 silverpin0.asm_
 
 _nasm -f elf64 silverpin1.asm_
@@ -39,6 +43,8 @@ _nasm -f elf64 silverunpin2.asm_
 _nasm -f elf64 silverunpin3.asm_
 
 **(2)** [in Toolbox]
+
+_ld -o silverpin silverpin.o_
 
 _ld -o silverpin0 silverpin0.o_
 
@@ -54,6 +60,8 @@ _ld -o silverunpin3 silverunpin3.o_
 
 **(3)** [on Silverblue]
 
+_sudo cp silverpin /var/usrlocal/bin/_
+
 _sudo cp silverpin0 /var/usrlocal/bin/_
 
 _sudo cp silverpin1 /var/usrlocal/bin/_
@@ -66,4 +74,4 @@ _sudo cp silverunpin2 /var/usrlocal/bin/_
 
 _sudo cp silverunpin3 /var/usrlocal/bin/_
 
-Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.0-alpha.1). silverpin can be uninstalled by [uninstall.sh](https://github.com/piotrbajdek/silverpin/blob/main/uninstall.sh).
+Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.0-alpha.2). silverpin can be uninstalled by [uninstall.sh](https://github.com/piotrbajdek/silverpin/blob/main/uninstall.sh).

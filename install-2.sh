@@ -3,6 +3,7 @@
 
 #!/usr/bin/env bash
 
+sudo cp silverpin /var/usrlocal/bin/
 sudo cp silverpin0 /var/usrlocal/bin/
 sudo cp silverpin1 /var/usrlocal/bin/
 sudo cp silverunpin0 /var/usrlocal/bin/

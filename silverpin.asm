@@ -11,24 +11,28 @@ msg1    db 'License:  Apache License 2.0 © 2022 Piotr Bajdek', 0Ah, 0h
 len1    equ $ - msg1
 msg2    db '', 0Ah, 0h
 len2    equ $ - msg2
-msg3    db 'Version:  August 4, 2022 v1.0.0-alpha.2', 0Ah, 0h
+msg3    db 'Version:  August 6, 2022 v1.0.0', 0Ah, 0h
 len3    equ $ - msg3
 msg4    db '', 0Ah, 0h
 len4    equ $ - msg4
-msg5    db 'Usage:    silverpin      dislpay help', 0Ah, 0h
+msg5    db 'Source:   https://github.com/piotrbajdek/silverpin', 0Ah, 0h
 len5    equ $ - msg5
-msg6    db '          silverpin0     ostree admin pin 0', 0Ah, 0h
+msg6    db '', 0Ah, 0h
 len6    equ $ - msg6
-msg7    db '          silverpin1     ostree admin pin 1', 0Ah, 0h
+msg7    db 'Usage:    silverpin      display help', 0Ah, 0h
 len7    equ $ - msg7
-msg8    db '          silverunpin0   ostree admin pin --unpin 0', 0Ah, 0h
+msg8    db '          silverpin0     ostree admin pin 0', 0Ah, 0h
 len8    equ $ - msg8
-msg9    db '          silverunpin1   ostree admin pin --unpin 1', 0Ah, 0h
+msg9    db '          silverpin1     ostree admin pin 1', 0Ah, 0h
 len9    equ $ - msg9
-msg10   db '          silverunpin2   ostree admin pin --unpin 2', 0Ah, 0h
+msg10   db '          silverunpin0   ostree admin pin --unpin 0', 0Ah, 0h
 len10   equ $ - msg10
-msg11   db '          silverunpin3   ostree admin pin --unpin 3', 0Ah, 0h
+msg11   db '          silverunpin1   ostree admin pin --unpin 1', 0Ah, 0h
 len11   equ $ - msg11
+msg12   db '          silverunpin2   ostree admin pin --unpin 2', 0Ah, 0h
+len12   equ $ - msg12
+msg13   db '          silverunpin3   ostree admin pin --unpin 3', 0Ah, 0h
+len13   equ $ - msg13
 
 section .text
 global _start
@@ -97,6 +101,18 @@ _start:
 
     mov rdx, len11
     mov rcx, msg11
+    mov rbx, 1
+    mov rax, 4    ; write system call
+    int 80h
+
+    mov rdx, len12
+    mov rcx, msg12
+    mov rbx, 1
+    mov rax, 4    ; write system call
+    int 80h
+
+    mov rdx, len13
+    mov rcx, msg13
     mov rbx, 1
     mov rax, 4    ; write system call
     int 80h

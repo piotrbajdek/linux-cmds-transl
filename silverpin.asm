@@ -5,13 +5,21 @@
 ; ld -o silverpin silverpin.o
 ; sudo cp silverpin /var/usrlocal/bin/
 
+%macro prntmsg 2
+    mov rdx, %2    ; lenX
+    mov rsi, %1    ; msgX
+    mov rdi, 1     ; stdout
+    mov rax, 1     ; write system call
+    syscall
+%endmacro
+
 section .data
 
 msg1    db 'License:  Apache License 2.0 © 2022 Piotr Bajdek', 0Ah, 0h
 len1    equ $ - msg1
 msg2    db '', 0Ah, 0h
 len2    equ $ - msg2
-msg3    db 'Version:  August 6, 2022 v1.0.0', 0Ah, 0h
+msg3    db 'Version:  October 5, 2022 v1.0.1', 0Ah, 0h
 len3    equ $ - msg3
 msg4    db '', 0Ah, 0h
 len4    equ $ - msg4
@@ -39,84 +47,20 @@ global _start
 
 _start:
 
-    mov rdx, len1
-    mov rcx, msg1
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
+prntmsg msg1, len1
+prntmsg msg2, len2
+prntmsg msg3, len3
+prntmsg msg4, len4
+prntmsg msg5, len5
+prntmsg msg6, len6
+prntmsg msg7, len7
+prntmsg msg8, len8
+prntmsg msg9, len9
+prntmsg msg10, len10
+prntmsg msg11, len11
+prntmsg msg12, len12
+prntmsg msg13, len13
 
-    mov rdx, len2
-    mov rcx, msg2
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len3
-    mov rcx, msg3
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len4
-    mov rcx, msg4
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len5
-    mov rcx, msg5
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len6
-    mov rcx, msg6
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len7
-    mov rcx, msg7
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len8
-    mov rcx, msg8
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len9
-    mov rcx, msg9
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len10
-    mov rcx, msg10
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len11
-    mov rcx, msg11
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len12
-    mov rcx, msg12
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rdx, len13
-    mov rcx, msg13
-    mov rbx, 1
-    mov rax, 4    ; write system call
-    int 80h
-
-    mov rbx, 0
-    mov rax, 1    ; exit system call
-    int 80h
+    xor rdi, rdi   ; exit code 0
+    mov rax, 60    ; exit system call
+    syscall

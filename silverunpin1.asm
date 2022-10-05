@@ -27,9 +27,9 @@ _start:
 
     mov rcx, args
     mov rbx, comm
-    mov rax, 11   ; execve system call
+    mov rax, 11    ; execve system call
     int 80h
 
-    mov rbx, 0
-    mov rax, 1    ; exit system call
-    int 80h
+    xor rdi, rdi   ; exit code 0
+    mov rax, 60    ; exit system call
+    syscall

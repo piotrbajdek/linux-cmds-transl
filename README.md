@@ -76,4 +76,4 @@ _sudo cp silverunpin2 /var/usrlocal/bin/_
 
 _sudo cp silverunpin3 /var/usrlocal/bin/_
 
-Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.0). silverpin can be uninstalled by [uninstall.sh](https://github.com/piotrbajdek/silverpin/blob/main/uninstall.sh).
+Alternatively, pre-assembled binaries can be downloaded [here](https://github.com/piotrbajdek/silverpin/releases/tag/v1.0.1). silverpin can be uninstalled by [uninstall.sh](https://github.com/piotrbajdek/silverpin/blob/main/uninstall.sh).
